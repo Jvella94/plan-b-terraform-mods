@@ -1,0 +1,36 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
+    <PackageReference Include="BepInEx.Core" Version="5.*" />
+    <PackageReference Include="UnityEngine.Modules" Version="6000.0.53" IncludeAssets="compile" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(GameManaged)\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+	<!-- Full Game?! -->
+	<PropertyGroup Condition="Exists('c:\Program Files (x86)\Steam\steamapps\common\Plan B Terraform')">
+		<GameDir>c:\Program Files (x86)\Steam\steamapps\common\Plan B Terraform\</GameDir>
+		<GameManaged>$(GameDir)Plan B Terraform_Data\Managed\</GameManaged>
+		<PluginsFolder>$(GameDir)\BepInEx\plugins</PluginsFolder>
+	</PropertyGroup>
+	<PropertyGroup Condition="Exists('e:\Steam\steamapps\common\Plan B Terraform')">
+		<GameDir>e:\Steam\steamapps\common\Plan B Terraform\</GameDir>
+		<GameManaged>$(GameDir)Plan B Terraform_Data\Managed\</GameManaged>
+		<PluginsFolder>$(GameDir)\BepInEx\plugins</PluginsFolder>
+	</PropertyGroup>
+
+	<!-- Deployment target directories -->
+	<PropertyGroup>
+		<Destination1>$(PluginsFolder)\Averax - $(Description)</Destination1>
+	</PropertyGroup>
+</Project>
