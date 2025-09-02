@@ -284,12 +284,25 @@ public class Plugin : BaseUnityPlugin
         return secrets;
     }
 
-    private static void GetSecretLocation(int xRange, int yRange, int2 mouseoverCoords, List<PoiInfo> secrets, int[]coords, string name)
+    private static void GetSecretLocation(int xRange, int yRange, int2 mouseoverCoords, List<PoiInfo> secrets, int[]secretCoords, string secretName)
     {
-        if (Math.Abs(mouseoverCoords.x - coords[0]) <= xRange && Math.Abs(mouseoverCoords.y - coords[1]) <= yRange)
+        bool isNearX = GetIsNearX(xRange, mouseoverCoords.x, secretCoords[0]);
+        if (isNearX && Math.Abs(mouseoverCoords.y - secretCoords[1]) <= yRange)
         {
-            secrets.Add(new PoiInfo { coords = new(coords[0], coords[1]), name = SLoc.Get(name, coords[0], coords[1]) });
+            secrets.Add(new PoiInfo { coords = new(secretCoords[0], secretCoords[1]), name = SLoc.Get(secretName, secretCoords[0], secretCoords[1]) });
         }
+    }
+
+    private static bool GetIsNearX(int xRange, int mouseoverXCoord, int secretXCoord)
+    {
+        int xColumns = 2048; // Current range from 0 to 2047 inclusive means 2048 positions total
+        int dist = Math.Abs(mouseoverXCoord - secretXCoord);
+
+        int wrappedDist = xColumns - dist;
+
+        int shortestDist = Math.Min(dist, wrappedDist);
+
+        return shortestDist <= xRange;
     }
 
     private static List<PoiInfo> GetAllSecrets()
