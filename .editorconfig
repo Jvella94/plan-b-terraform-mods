@@ -1,0 +1,4 @@
+root = true
+
+[*.cs]
+file_header_template = Copyright (c) Jonathan Vella, 2025\nLicensed under the GNU GENERAL PUBLIC LICENSE, Version 3.0
