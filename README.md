@@ -5,7 +5,7 @@ Many thanks to <a href='https://github.com/akarnokd/plan-b-terraform-mods/tree/m
 
 ## Version <a href='https://github.com/JVella94/plan-b-terraform-mods/releases'><img src='https://img.shields.io/github/v/release/JVella94/plan-b-terraform-mods' alt='Latest GitHub Release Version'/></a>
 
-[![Github All Releases](https://img.shields.io/github/downloads/JVella94/plan-b-terraform-mods/total.svg)](https://github.com/JVella94/plan-b-terraform-mods/releases)
+<!--  ([![Github All Releases](https://img.shields.io/github/downloads/JVella94/plan-b-terraform-mods/total.svg)](https://github.com/JVella94/plan-b-terraform-mods/releases)) -->
 
 ## Supported version: Release (v1.0 build 1166)
 
