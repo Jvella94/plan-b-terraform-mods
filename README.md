@@ -82,7 +82,7 @@ Many thanks to <a href='https://github.com/akarnokd/plan-b-terraform-mods/tree/m
 
 ### Cheats
 
-- [Treasure Map](#treasure-map) - Helps finding the locations of the secrets on the map.
+- [Treasure Map](#treasure-map) - Helps in finding the locations of the secrets on the map.
 
 ### Discontinued
 
@@ -90,7 +90,7 @@ Many thanks to <a href='https://github.com/akarnokd/plan-b-terraform-mods/tree/m
 
 ## Treasure Map
 
-Allows finding the locations of the secrets on the map.
+Helps in finding the locations of the secrets on the map.
 
 A panel will pop up showing you that a secret is nearby (using your mouse position as reference)
 
