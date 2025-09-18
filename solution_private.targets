@@ -31,6 +31,6 @@
 
 	<!-- Deployment target directories -->
 	<PropertyGroup>
-		<Destination1>$(PluginsFolder)\Averax - $(Description)</Destination1>
+		<Destination1>$(PluginsFolder)\Averax - $(AssemblyName)</Destination1>
 	</PropertyGroup>
 </Project>
